@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%23d9fa76%27/%3E%3Cpath d=%27M32 11 51 22v22L32 55 13 44V22Zm0 0v22m-19-11 19 11 19-11M32 33v22%27 fill=%27none%27 stroke=%27%2318200d%27 stroke-width=%273%27/%3E%3C/svg%3E">
+<meta name="description" content="BRO//OS. Un simulador espacial de produccion, bugs y decisiones cuestionables. Sin instalaciones ni conexiones externas.">
+<title>BRO//OS: BIG BANG | El final era el principio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<symbol id="i-core" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7z"/><path d="m3 7 9 5 9-5M12 12v10M7.5 4.5l9 5v5"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v7L4.5 19a1.3 1.3 0 0 0 1 2h13a1.3 1.3 0 0 0 1-2L14 10V3M8 14h8"/><path d="M10 18h.01M14 16h.01"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 3h8v7a4 4 0 0 1-8 0zM8 5H4v3a4 4 0 0 0 4 4m8-7h4v3a4 4 0 0 1-4 4M12 14v5m-4 2h8M10 19h4"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5C9 3 5 3 3 4v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-2-1-6-1-9 1Zm0 0v15"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="m9.5 3-.8 3-2.9.8-2.2 2.9 2 2.3-.2 3 2.8 2 1.4 3h4.8l1.3-3 2.8-2-.2-3 2-2.3-2.2-2.9-2.9-.8-.8-3z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-volume" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4zM15 8a6 6 0 0 1 0 8M18 4a11 11 0 0 1 0 16"/></symbol>
+<symbol id="i-muted" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4zM16 9l6 6m0-6-6 6"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 .5c0 2-2.5 2-2.5 4M12 17h.01"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+<symbol id="i-credit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a4.5 4.5 0 1 0 0 7M5 11h8m-8 3h8"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01M15 6.5h3M15 17.5h3"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+<symbol id="i-bug" viewBox="0 0 24 24"><rect x="7" y="6" width="10" height="15" rx="5"/><path d="M9 3l1 3m4 0 1-3M3 8l4 2m10 0 4-2M3 14h4m10 0h4M3 20l4-2m10 0 4 2M12 10v7"/></symbol>
+<symbol id="i-orbit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="11" ry="5" transform="rotate(-30 12 12)"/><path d="M17 3h.01M7 21h.01"/></symbol>
+<symbol id="i-pointer" viewBox="0 0 24 24"><path d="m5 3 3 17 4-6 7-1zM13 15l4 5"/></symbol>
+<symbol id="i-coffee" viewBox="0 0 24 24"><path d="M4 8h12v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3zM16 8h2a3 3 0 1 1 0 6h-2M7 2v3m5-3v3M2 22h16"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-8z"/></symbol>
+<symbol id="i-rollback" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 8M3 4v6h6M12 7v5l4 2"/></symbol>
+<symbol id="i-chaos" viewBox="0 0 24 24"><path d="m12 2 2 6 6-2-4 6 6 2-7 2-1 6-4-5-6 3 2-7-4-3 7-1z"/></symbol>
+<symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 6 6 6-6 6m9 0h7"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M20 4 4 11l7 2 2 7zM11 13l9-9"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+<symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 4l3 3 3-3M9 20l3-3 3 3M3 10l4-1V5m14 9-4 1v4M3 14l4 1v4m14-9-4-1V5"/></symbol>
+<symbol id="i-cpu" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M3 3l6 6m12-6-6 6M3 21l6-6m12 6-6-6"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12l4 4v12a2 2 0 0 1-2 2Z"/><path d="M7 3v6h9V3M7 21v-8h10v8"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M3 15v6h18v-6"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3M7 8l5-5 5 5M3 15v6h18v-6"/></symbol>
+</defs></svg>
+<div class="app" id="app">
+<aside class="sidebar" aria-label="Navegacion principal">
+<button class="brand" id="brandBtn" aria-label="BRO OS, ir al centro de mando"><span class="brand-mark"><svg><use href="#i-core"/></svg></span><span class="brand-text">bro<span class="slashes">//</span>os</span></button>
+<div class="brand-caption">BIG BANG / EXPANSION 2.0</div>
+<div class="nav-label mono">TU PEQUEÑO IMPERIO</div>
+<nav class="nav">
+<button class="nav-btn active" data-view="command" aria-current="page" title="Centro de mando"><svg><use href="#i-grid"/></svg><span class="nav-text">Centro de mando</span></button>
+<button class="nav-btn" data-view="lab" title="Laboratorio de mejoras"><svg><use href="#i-flask"/></svg><span class="nav-text">Laboratorio</span><span class="nav-num" id="labNavCount">04</span></button>
+<button class="nav-btn" data-view="automation" title="Drones y automatizaciones"><svg><use href="#i-cpu"/></svg><span class="nav-text">Drones</span></button>
+<button class="nav-btn" data-view="rifts" title="Jefes de produccion"><svg><use href="#i-chaos"/></svg><span class="nav-text">Jefes</span><span class="badge pink" style="margin-left:auto;font-size:7px">03</span></button>
+<button class="nav-btn" data-view="singularity" title="Big Bang: prestigio y dimensiones"><svg><use href="#i-orbit"/></svg><span class="nav-text">Big Bang</span><span class="nav-num" id="bbNavCount">00</span></button>
+<button class="nav-btn" data-view="archive" title="Logros y estadisticas"><svg><use href="#i-trophy"/></svg><span class="nav-text">Logros</span><span class="nav-num" id="achievementCount">00</span></button>
+<button class="nav-btn" id="manualBtn" title="Manual de supervivencia"><svg><use href="#i-book"/></svg><span class="nav-text">Cómo sobrevivir</span></button>
+</nav>
+<div class="sidebar-world"><div class="world-title"><span class="dot"></span>Multiverso personal</div><p>Sin reuniones.<br>Con consecuencias.</p><div class="world-bars" aria-hidden="true"><span style="height:35%"></span><span style="height:60%"></span><span style="height:44%"></span><span style="height:80%"></span><span style="height:62%"></span><span style="height:90%"></span><span style="height:72%"></span><span style="height:100%"></span><span style="height:66%"></span><span style="height:83%"></span><span style="height:48%"></span><span style="height:70%"></span><span style="height:94%"></span><span style="height:76%"></span><span style="height:55%"></span><span style="height:83%"></span></div></div>
+<div class="side-bottom"><div class="save-status" id="saveStatus"><svg><use href="#i-check"/></svg><span>Partida guardada en local</span></div><div class="profile"><div class="avatar">&gt;_</div><div class="profile-info"><div class="profile-name">Tú, pero con poderes</div><div class="profile-role" id="rankLabel">Becario del cosmos · N.1</div></div><button id="settingsBtn" aria-label="Ajustes"><svg><use href="#i-settings"/></svg></button></div></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="breadcrumb"><span class="crumb-home">WORKSPACE</span><span class="crumb-home">/</span><span class="current" id="breadcrumbCurrent">MULTIVERSO–001</span><span class="badge grey">LOCAL</span></div><div class="top-tools"><div class="live-status"><span class="dot" id="liveDot"></span><span id="liveText">SISTEMA EN VIVO</span></div><span class="tiny-divider"></span><button class="icon-btn" id="soundBtn" title="Activar sonido" aria-label="Activar sonido" aria-pressed="false"><svg><use href="#i-muted"/></svg></button><button class="icon-btn" id="helpBtn" title="Ayuda y atajos" aria-label="Ayuda y atajos"><svg><use href="#i-help"/></svg></button><button class="icon-btn" id="topSettingsBtn" title="Ajustes y partida" aria-label="Ajustes y partida"><svg><use href="#i-settings"/></svg></button></div></header>
+<section class="heading"><div><div class="eyebrow" id="headingEyebrow">SIMULADOR DE DECISIONES CUESTIONABLES</div><h1 id="mainTitle">Tu imperio. Tus bugs.</h1><p id="headingDesc">Construye algo increíble. Intenta que no explote.</p></div><div class="head-actions"><button class="btn ghost" id="pauseBtn"><svg><use href="#i-pause"/></svg><span>Pausar</span></button><button class="btn primary" id="deployBtn" title="Desplegar un nuevo nodo (D)"><svg><use href="#i-plus"/></svg>Desplegar universo<span class="deploy-price mono" id="deployPrice" style="font-size:9px;opacity:.7">180 CR</span><span class="kbd">D</span></button></div></section>
+<section class="stats" aria-label="Estadisticas del multiverso">
+<div class="stat"><div class="stat-label"><svg><use href="#i-credit"/></svg>Créditos cósmicos</div><div class="stat-value"><span id="creditsValue">1.250</span><span class="unit">CR</span></div><div class="stat-foot"><span class="acid" id="incomeValue">↗ +12,0 / s</span><span>en automático</span></div><div class="stat-trend" aria-hidden="true"><svg viewBox="0 0 68 24" style="color:var(--acid)"><path d="M1 21 9 17 16 19 24 12 31 14 40 5 47 10 55 6 61 7 67 1"/></svg></div></div>
+<div class="stat"><div class="stat-label"><svg><use href="#i-server"/></svg>Universos desplegados</div><div class="stat-value"><span id="nodesValue">03</span><span class="unit" id="capacityValue">/ 08</span></div><div class="stat-foot"><span id="nodesFoot">Conectados al núcleo</span><div class="mini-capacity" id="miniCapacity" aria-hidden="true"></div></div></div>
+<div class="stat"><div class="stat-label"><svg><use href="#i-heart"/></svg>Estabilidad del sistema</div><div class="stat-value"><span id="stabilityValue">92</span><span class="unit">%</span></div><div class="stat-foot"><span class="dot" id="stabilityDot" style="width:4px;height:4px"></span><span id="stabilityText">Sospechosamente estable</span></div><div class="stat-meter" id="stabilityMeter"></div></div>
+<div class="stat"><div class="stat-label"><svg><use href="#i-bug"/></svg>Bugs en producción</div><div class="stat-value"><span id="bugsValue">02</span><span class="unit pink" id="threatLabel">MANEJABLE</span></div><div class="stat-foot"><button class="accessible-bug" id="purgeBtn" title="Elimina un bug sin coste; alternativa al mapa"><svg><use href="#i-bolt"/></svg>Purgar un bug</button><span id="bugsDefeated" style="margin-left:auto">0 purgados</span></div></div>
+</section>
+<section class="bb-status" aria-label="Estado del ciclo"><div class="dim-info"><svg aria-hidden="true"><use href="#i-orbit"/></svg><strong id="dimensionLabel"></strong><span id="cycleLabel"></span></div><span class="bb-counter" id="shardLabel"></span><span class="era-counter" id="eraLabel"></span><button class="frontier-btn" id="nextFrontier">JEFES 0/3</button></section>
+<section id="view-command" class="view">
+<div class="main-grid"><div class="left-column">
+<section class="panel universe-panel"><header class="panel-head"><div class="panel-title"><svg><use href="#i-orbit"/></svg>Mapa del multiverso<span class="badge green" id="sectorBadge">SECTOR 01</span></div><label class="screenreader-only" for="nodeSelect">Inspeccionar un nodo</label><select id="nodeSelect" class="node-selector" title="Selecciona un nodo para mejorarlo"><option value="">Inspeccionar nodo ↓</option></select></header>
+<div class="arena-wrap" id="arenaWrap"><canvas id="universe" role="img" aria-label="Mapa interactivo del multiverso. Pulsa los bugs para eliminarlos o los nodos para mejorarlos. Tambien puedes usar el boton Purgar un bug y el selector Inspeccionar nodo."></canvas><div class="arena-top"><div class="eyebrow">TOPOLOGÍA EN TIEMPO REAL</div><div class="sector-name">bro.core / región ∞</div></div><div class="arena-legend"><div class="legend-line"><span class="legend-dot"></span>Universo estable</div><div class="legend-line"><span class="legend-dot bug"></span>Bug con iniciativa</div></div><div class="arena-tag"><svg><use href="#i-pointer"/></svg>PULSA UN BUG PARA PURGARLO</div><div class="arena-controls"><button class="icon-btn" id="orbitBtn" title="Alternar movimiento orbital" aria-label="Alternar movimiento orbital" aria-pressed="true"><svg><use href="#i-orbit"/></svg></button><button class="icon-btn" id="focusBtn" title="Enfocar mapa" aria-label="Enfocar mapa"><svg><use href="#i-expand"/></svg></button></div><div id="boostRibbon" class="boost-ribbon hidden">CAFEÍNA ×2 · 20s</div>
+<div class="arena-pause hidden" id="pauseOverlay"><div class="pause-symbol">Ⅱ</div><h2>Hasta el caos necesita descanso.</h2><p>Todo está pausado. Respira, bro.</p><button class="btn primary" id="resumeBtn"><svg><use href="#i-play"/></svg>Volver al caos</button></div>
+<div class="node-inspector hidden" id="nodeInspector"><button class="inspector-close" id="closeInspector" aria-label="Cerrar inspector">×</button><div class="eyebrow">INSPECTOR DE UNIVERSO</div><h3 id="inspectorName"></h3><div class="node-detail"><span>Nivel de infraestructura</span><strong id="inspectorLevel"></strong></div><div class="node-detail"><span>Producción base</span><strong class="acid" id="inspectorIncome"></strong></div><button class="btn primary" id="upgradeNodeBtn">Mejorar</button></div>
+</div>
+<div class="actions-dock"><button class="power-btn" id="coffeeBtn" title="Ingresos x2 durante 20 segundos. Cuesta 80 CR. Atajo C."><svg><use href="#i-coffee"/></svg><div><div class="power-name">Café de emergencia</div><div class="power-cost" id="coffeeCost">80 CR · INGRESOS ×2</div></div><div class="cooldown-bar" id="coffeeBar" style="width:0"></div></button><button class="power-btn" id="fixBtn" title="Elimina hasta 3 bugs y recupera 12 puntos de estabilidad. Cuesta 120 CR. Atajo F."><svg><use href="#i-bolt"/></svg><div><div class="power-name">Hotfix milagroso</div><div class="power-cost" id="fixCost">120 CR · −3 BUGS</div></div><div class="cooldown-bar" id="fixBar" style="width:0"></div></button><button class="power-btn" id="rollbackBtn" title="Elimina todos los bugs y recupera 25 puntos de estabilidad; detiene ingresos 8 segundos. Cuesta 240 CR."><svg><use href="#i-rollback"/></svg><div><div class="power-name">Rollback sagrado</div><div class="power-cost" id="rollbackCost">240 CR · RESCATE</div></div><div class="cooldown-bar" id="rollbackBar" style="width:0"></div></button><button class="power-btn chaos" id="chaosBtn" title="Gana 200 CR a cambio de 3 bugs y 8 puntos de estabilidad. Atajo X."><svg><use href="#i-chaos"/></svg><div><div class="power-name">Invocar caos</div><div class="power-cost" id="chaosCost">+200 CR · MALA IDEA</div></div><div class="cooldown-bar" id="chaosBar" style="width:0;background:var(--pink)"></div></button></div>
+</section>
+<section class="panel activity"><header class="panel-head"><div class="panel-title"><svg><use href="#i-terminal"/></svg>Diario de decisiones</div><div class="log-tabs" aria-label="Filtrar registros"><button class="log-tab active" data-log="all" aria-pressed="true">Todo</button><button class="log-tab" data-log="error" aria-pressed="false">Incidencias</button></div></header><div class="logs" id="logs" role="log" aria-label="Registro de actividad" aria-live="off"></div><form class="terminal" id="terminalForm"><label for="terminalInput">bro@cosmos:~$</label><input id="terminalInput" type="text" placeholder="Escribe help. O confía en el caos." autocomplete="off" spellcheck="false" maxlength="140" aria-label="Terminal simulada, escribe help para ver los comandos"><button type="submit" title="Ejecutar comando simulado" aria-label="Ejecutar comando simulado"><svg><use href="#i-send"/></svg></button></form></section>
+</div><aside class="right-column" aria-label="Incidentes y misiones">
+<section class="panel incident-panel"><header class="panel-head"><div class="panel-title"><svg><use href="#i-bolt"/></svg>Mientras tanto, en prod…</div><span class="event-count" id="eventCount">01</span></header><div class="incident-body" id="incidentBody"></div></section>
+<section class="panel mission-panel"><div class="mission-head"><span class="eyebrow" id="missionNumber">CONTRATO 01 / 06</span><svg><use href="#i-trophy"/></svg></div><h3 id="missionTitle">Hola, multiverso.</h3><div class="mission-desc" id="missionDesc">Despliega un nuevo universo. El primero siempre parece buena idea.</div><div class="progress" role="progressbar" aria-label="Progreso del contrato" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="missionProgress"><div class="progress-fill" id="missionFill"></div></div><div class="mission-meta"><span id="missionProgressText">0 / 1 universos</span><span class="reward"><svg><use href="#i-credit"/></svg><span id="missionReward">+250 CR</span></span></div></section>
+<div class="tip-card"><svg><use href="#i-help"/></svg><button class="frontier-hint" id="frontierHint"></button></div>
+</aside></div>
+</section>
+<section id="view-lab" class="view alt-view hidden"><div class="view-intro"><h2>Mejora el sistema.<br>No tus excusas.</h2><p>Invierte créditos cósmicos en infraestructura que aguante tus decisiones. Los efectos se aplican a todo el multiverso.</p></div><div class="upgrade-grid" id="upgradeGrid"></div><div class="panel lab-note"><svg><use href="#i-pointer"/></svg><span>También puedes mejorar cada universo por separado: selecciónalo en el mapa o en el menú «Inspeccionar nodo». Cada nivel añade <strong class="acid">+4 CR/s de producción base</strong>. Máximo: nivel 5.</span></div></section>
+<section id="view-archive" class="view alt-view hidden"><div class="view-intro"><h2>El currículum que<br>no enseñarías en LinkedIn.</h2><p>Tus hitos, tus victorias y pruebas irrefutables de que alguien te dio acceso a producción.</p></div><div class="archive-summary"><div class="summary-box"><div class="eyebrow">TIEMPO SOBREVIVIDO</div><strong id="archiveTime">00:00</strong></div><div class="summary-box"><div class="eyebrow">CRÉDITOS GENERADOS</div><strong id="archiveEarned">0</strong></div><div class="summary-box"><div class="eyebrow">NIVEL CÓSMICO</div><strong id="archiveLevel">01</strong></div></div><div class="achievement-grid" id="achievementGrid"></div></section>
+
+<section id="view-automation" class="view alt-view hidden">
+<p class="expansion-intro">Las tareas repetitivas no necesitan un h&#233;roe. Necesitan un pato bien configurado. Los drones trabajan mientras juegas, tambi&#233;n durante los encuentros.</p>
+<div class="drone-grid" id="droneGrid"></div>
+<div class="automation-settings"><div><h3>Tu presupuesto tiene l&#237;mites.</h3><p>El SRE y el becario nunca gastan por debajo de esta reserva. Tus compras manuales s&#237; pueden hacerlo. Si no tienen presupuesto, esperan.</p></div><div><label class="field-label" for="creditReserve">RESERVA DE CR&#201;DITOS (CR)</label><input class="bb-input" id="creditReserve" type="number" min="0" max="1000000000" step="100" value="1000"></div><div><label class="field-label" for="medicThreshold">REPARAR POR DEBAJO DE</label><select class="bb-select" id="medicThreshold"><option value="70">70% de estabilidad</option><option value="85" selected>85% de estabilidad</option><option value="95">95% de estabilidad</option><option value="100">100% de estabilidad</option></select></div></div><div class="automation-bottom" id="autoCounter"></div>
+</section>
+<section id="view-rifts" class="view alt-view hidden">
+<p class="expansion-intro">Cada jefe tiene tres fases y un tiempo l&#237;mite. Puedes seguir usando el mapa y los drones. Los botones de emergencia tambi&#233;n est&#225;n dentro del combate.</p>
+<div class="raid-grid" id="raidCatalog"></div><div class="raid-live hidden" id="raidLive"></div><p class="raid-status" id="raidStatus"></p>
+<div class="raid-warning"><svg aria-hidden="true"><use href="#i-shield"/></svg><span><strong>No pierdes tus servidores por fallar un encuentro.</strong> Si se agota el tiempo, pierdes el 10% de tus cr&#233;ditos y 12 de estabilidad. Puedes prepararte y reintentarlo. Si la estabilidad llega a cero, se aplica el rescate normal del 40%.</span></div>
+</section>
+<section id="view-singularity" class="view alt-view hidden">
+<div class="prestige-hero" id="prestigeHero"></div><div class="prestige-requirements"><div class="prestige-checklist" id="prestigeChecklist"></div><div class="prestige-numbers" id="prestigeNumbers"></div></div><p class="section-subnote" id="fragmentFormula"></p>
+<div class="section-heading"><h2>Lo que sobrevive al universo.</h2><p>MEJORAS PERMANENTES / SE PAGAN CON FRAGMENTOS</p></div><div class="permanent-grid" id="permanentGrid"></div>
+<div class="section-heading"><h2>Elige d&#243;nde romperlo todo.</h2><p>EL DESTINO SE ELIGE AL CONFIRMAR CADA BIG BANG</p></div><div class="dimensions-grid" id="dimensionsGrid"></div><p class="section-subnote">Cada salto a&#241;ade un 10% de producci&#243;n base y un 12% de da&#241;o continuo de bugs (hasta +150%). La campa&#241;a de BIG BANG se completa con cinco saltos; despu&#233;s puedes continuar en modo libre.</p>
+</section>
+<footer class="footer"><span>SIMULACIÓN LOCAL · NINGÚN SERVIDOR REAL SUFRIÓ DAÑOS.</span><span>Hecho con <span class="heart">♥</span> y cero planes de contingencia. <button id="footerHelp">BIG BANG v.2.0 ↗</button></span></footer>
+</main></div>
+<div class="toast-stack" id="toasts" aria-live="polite" aria-atomic="false"></div>
+<div class="modal-layer hidden" id="modalLayer"><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div></div>
+<input type="file" id="importInput" accept="application/json,.json" class="hidden" aria-label="Importar partida">
+<noscript><div class="error-box">BRO//OS necesita JavaScript para mover el multiverso. Actívalo en tu navegador y vuelve a abrir este archivo.</div></noscript>
+<script src="app.js"></script>
+</body>
+</html>
