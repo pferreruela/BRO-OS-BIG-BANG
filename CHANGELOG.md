@@ -1,5 +1,6 @@
 # BIG BANG 2.0
 
+- Fixed collapse recovery bypass, interrupted boss hold timers and paused terminal rewards.
 - Compatible v1/v2 save migration with independent storage.
 - Three optional, sequential bosses with three phases each.
 - Prestige with explicit confirmation and pre-reset backup.

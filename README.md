@@ -186,5 +186,10 @@ genera sus propios datos ficticios; no accede a tus partidas.
 
     python tests/integration.py
 
+Las regresiones de estabilidad, fases de jefes y recompensas durante la pausa
+también se pueden comprobar con Node.js, sin Playwright:
+
+    node tests/regression.cjs
+
 Puedes indicar el ejecutable del navegador con BROWSER_EXECUTABLE si fuese
 necesario. El informe de la comprobación realizada esta en `tests/resultados.json`.
